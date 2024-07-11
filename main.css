@@ -1,0 +1,146 @@
+:root {
+  --backgroundSize: 300px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Pacifico', Georgia, Times, 'Times New Roman', serif;
+  background-image: url("logos/background.png");
+  background-size: var(--backgroundSize);
+  background-repeat: repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+  animation: movingBackground 20s linear infinite;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes movingBackground {
+  from { background-position: 0 0; }
+  to { background-position: var(--backgroundSize) var(--backgroundSize); }
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  color: #007bff;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+ul li {
+  font-size: 20px;
+}
+
+.content-box {
+  position: relative;
+  z-index: 2;
+}
+
+.featured {
+  display: none;
+}
+
+.featured img {
+  padding-top: 4px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.slideshow-container {
+  max-width: 50%;
+  position: relative;
+  margin: auto;
+  margin-top: 150px;
+  min-height: 500px;
+  background-color: black;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 4s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+#shoes img,#jerseys img,#hoodies img{
+  margin-left: 45px;
+  width:170px;
+  height: auto;
+}
+
+.bx-add-to-queue{
+  transform: scale(6.0);
+  position: relative;
+  margin: 85px 0 0 120px;
+}
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer h5 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #007bff;
+}
+
+.footer .me-2 {
+  margin-right: 0.5rem;
+}
